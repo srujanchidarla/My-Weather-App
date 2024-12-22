@@ -9,6 +9,7 @@ import MapComponent from "./components/MapComponent";
 import Contact from "./components/Contact";
 import axios from "axios";
 import Footer from "./components/Footer";
+import Loader from "./components/Loader";
 
 function App() {
   const [weatherData, setWeatherData] = useState(null);
@@ -119,7 +120,7 @@ function App() {
                 <>
                   <SearchComponent onSearch={fetchWeather} />
                   {loading ? (
-                    <div>Loading...</div>
+                    <Loader />
                   ) : error ? (
                     <div style={{ color: "red" }}>{error}</div>
                   ) : (
